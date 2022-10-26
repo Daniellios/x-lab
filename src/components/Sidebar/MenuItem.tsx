@@ -13,6 +13,7 @@ interface IMenuItem {
 
 const MenuItem: FC<IMenuItem> = ({ tittle, pathLink, imgSrc, isNested }) => {
   const router = useRouter().pathname;
+
   return (
     <Link href={pathLink}>
       <div className={isNested ? styles.list_item_nested : styles.list_item}>

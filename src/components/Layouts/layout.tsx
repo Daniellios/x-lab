@@ -3,7 +3,7 @@ import Header from "../Header";
 import styles from "../../styles/Layout.module.scss";
 import Menu from "../Sidebar/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import CloseIcon from "@mui/icons-material/Close";
 interface ILayoutProps {
   children: React.ReactNode;
 }
@@ -18,10 +18,13 @@ export default function Layout({ children }: ILayoutProps) {
   return (
     <div className={styles.container}>
       <Header></Header>
-
       <main className={styles.main_container}>
         <button className={styles.menu_icon} onClick={openSeideBar}>
-          <MenuIcon fontSize="large"></MenuIcon>
+          {isSideBarOpen ? (
+            <CloseIcon fontSize="large"></CloseIcon>
+          ) : (
+            <MenuIcon fontSize="large"></MenuIcon>
+          )}
         </button>
 
         <Menu
