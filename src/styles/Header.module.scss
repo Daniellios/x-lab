@@ -1,0 +1,50 @@
+@import "mixins", "variables";
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: $mainPurple;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 16px 32px;
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  color: $mainText;
+
+  @include md() {
+    justify-content: space-between;
+    @include toRem(column-gap, 34);
+  }
+
+  @include sm() {
+    justify-content: space-between;
+    @include toRem(column-gap, 16);
+  }
+
+  &_title {
+    display: flex;
+    align-items: center;
+    @include toRem(gap, 24);
+  }
+
+  &_profile {
+    display: flex;
+    align-items: center;
+    @include toRem(gap, 16);
+  }
+}
